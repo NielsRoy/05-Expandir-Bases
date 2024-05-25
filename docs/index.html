@@ -6,6 +6,20 @@
   <!--* cambiar el href="/" a -> href="./" es importante para el despliegue en github pages ya que sino -->
   <!--* Este intenta buscar los archivos JS y CSS con la direccion https://loquesea/archivo JS o CSS -->
   <!--* Pero cuando lo desplegamos en GitHub Pages se sube asi: https://loquesea/repositorio/archivo JS o CSS  -->
+
+  <!--TODO: Para automatizar ese proceso creamos un comando en package.json  -->
+  <!--TODO: "build:href": "ng build --base-href ./",  -->
+
+  <!--TODO: Si queremos automatizar para todo el proceso de despliegue en GitHub Pages podemos usar scripts  -->
+  <!--TODO: Instalamos los siguientes paquetes: -->
+  <!--TODO: npm install del-cli --save-dev -->
+  <!--TODO: npm install copyfiles --save-dev -->
+  <!--TODO: Y creamos los siguientes comandos en package.json:  -->
+  <!--TODO: "delete:docs": "del docs" -->
+  <!--TODO: "copy:dist": "copyfiles dist/05-expandir-bases/browser/* ./docs -f" -->
+
+  <!--TODO: Y para automatizar todo creamos el comando: -->
+  <!--TODO: "build:github": "npm run delete:docs && npm run build:href && npm run copy:dist", -->
   <base href="./">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
