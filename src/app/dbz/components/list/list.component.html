@@ -1,0 +1,36 @@
+<h4>Listado</h4>
+<!--* Cualquier propiedad de las tags de HTML puede recibir codigo JS si se lo  -->
+<!--* envuelve en [ ] ej: [class]="'esto-es-un-string-js'"  -->
+
+<ul class="list-group">
+  <!--* No existe la desestructuracion dentro de las directivas como *ngFor -->
+  <!-- index es un objeto ya definido en el ngFor -->
+  <!-- even -> para saber si es par o no -->
+  <!-- odd -> para saber si es impar o no -->
+
+  <li *ngFor="
+    let character of CharacterList;
+    let i = index;
+    let isFirst = first;
+    let isLast = last;
+    let isEven = even;
+    let isOdd = odd;
+    " class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{
+      'list-group-item-success': isEven,
+      'list-group-item-danger': isLast
+    }">
+    <div>
+      <span>{{ i + 1 }}. </span>
+      <span>{{ character.name }} - </span>
+      <strong>Power: </strong>
+      <span>{{ character.power }}</span>
+
+      <!-- <span>Es impar: {{ isOdd }}</span> -->
+    </div>
+
+    <button (click)="onDeleteCharacter(character.id)" class="btn btn-danger">
+      X
+    </button>
+  </li>
+</ul>
